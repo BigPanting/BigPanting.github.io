@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习计划制定工具</title>
+    <!-- 引入CSS文件 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>学习计划制定工具</h1>
+        <p>轻松规划你的学习，高效管理时间</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>创建新学习计划</h2>
+            <div id="message" class="message"></div>
+            <form id="plan-form">
+                <div class="form-group">
+                    <label for="title">计划标题</label>
+                    <input type="text" id="title" placeholder="例如：学习HTML基础" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">学习科目</label>
+                    <select id="subject" required>
+                        <option value="">选择科目</option>
+                        <option value="programming">前后端开发</option>
+                        <option value="language">数据处理与分析</option>
+                        <option value="math">语言基础</option>
+                        <option value="science">机器学习</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="hours">计划学习时长（小时）</label>
+                    <input type="number" id="hours" min="0.5" step="0.5" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">计划日期</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="notes">备注（可选）</label>
+                    <textarea id="notes" rows="3" placeholder="添加详细的学习内容或目标..."></textarea>
+                </div>
+                <button type="submit">添加计划</button>
+            </form>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="total-plans">0</div>
+                <div class="stat-label">总计划数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="completed-plans">0</div>
+                <div class="stat-label">已完成</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="pending-plans">0</div>
+                <div class="stat-label">待完成</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>我的学习计划</h2>
+            <div class="plan-list" id="plan-list">
+                <!-- 学习计划将通过JavaScript动态添加到这里 -->
+                <p>暂无学习计划，添加你的第一个计划吧！</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="script.js"></script>
+</body>
+</html>
